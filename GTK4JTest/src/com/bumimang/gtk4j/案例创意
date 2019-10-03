@@ -1,0 +1,14 @@
+1、网络测速（用到流：http://zhidao.baidu.com/link?url=DTDTSqYxR3bD0BRltwBE14UIbfk2kebKehLyTCrP3n1-hsmCQNWAabWyjCo-v7YF3_2nQUBT8_fZXxTpf5t3Ya）。用到多线程
+3、调用百度的接口（http://www.cnblogs.com/txw1958/p/baidu-weather-forecast-api.html）实现天气预报功能，用到xml解析。优先级放到CRM之后。用到流
+4、计算器：http://app.baidu.com/app/enter?appid=116526 用到数据结构
+5、闹表：http://app.baidu.com/app/enter?appid=147681  用到定时器
+6、火星文翻译器 http://app.baidu.com/app/enter?appid=105535  用到数据结构
+7、大小写转换：http://app.baidu.com/app/enter?appid=133964  用到字符串处理
+8、年龄计算器：http://app.baidu.com/app/enter?appid=125342  用到Calendar
+9、身份证查询：http://app.baidu.com/app/enter?appid=101283   用到字符串处理
+10、简繁转换  用到数据结构
+
+创意来源：http://app.baidu.com/appweb   （直接把浏览器嵌入在这里）
+
+文件批量拷贝
+不用都自己去做。给学生留作业
