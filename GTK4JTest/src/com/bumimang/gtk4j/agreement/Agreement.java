@@ -13,7 +13,7 @@ public class Agreement {
 	public static void main(String[] args) throws IOException {
 		GTK.gtk_init();
 		win = GTK.gtk_window_new(GTK.GTK_WINDOW_TOPLEVEL);
-		GTK.gtk_window_set_title(win, "安装协议");
+		GTK.gtk_window_set_title(win, "Installing");
 		GTK.gtk_window_set_position(win, GTK.GTK_WIN_POS_CENTER_ALWAYS);
 		
 		GTK.g_signal_connect(win, "destroy", new IGCallBack() {
@@ -31,10 +31,19 @@ public class Agreement {
 			throw new RuntimeException("找不到eula.txt");
 		}*/
 		
-		String msg = "请您在使用本软件前仔细阅读如下条款。包括免除或者限制作者责任的免责条款及对用户的权利限制。您的安装使用行为将视为对本《协议》的接受，并同意接受本《协议》各项条款的约束。\n"+
-		"  本《用户许可协议》（以下称《协议》）是您（个人或单一机构团体）与上述 XXX软件（以下称“软件”或“软件产品”）版权所有 XX软件 之间的法律协议。在您使用本软件产品之前,请务必阅读此《协议》，任何与《协议》有关的软件、电子文档等都应是按本协议的条款而授予您的，同时本《协议》亦适用于任何有关本软件产品的后期发行和升级。您一旦安装、复制、下裁、访问或以其它方式使用本软件产品，即表示您同意接受本《协议》各项条款的约束。如果您拒绝接受本《协议》条款，请您停止下载、安装或使用本软件及其相关服务。 \n"+
-				"  您不得对本软件产品进行反向工程、反向编译和反向汇编，不得删除本软件及其他副本上一切关于版权的信息，不得制作和提供该软件的注册机及破解程序。除非适用法律明文允许上述活动，否则您必须遵守此协议限制。";
-		
+		String msg = "1. Account Controls\r\n" + 
+				"Users. Subject to these Terms, you retain ultimate administrative control over your User Account and the Content within it.\r\n" + 
+				"\r\n" + 
+				"Organizations. The \"owner\" of an Organization that was created under these Terms has ultimate administrative control over that Organization and the Content within it. Within the Service, an owner can manage User access to the Organization’s data and projects. An Organization may have multiple owners, but there must be at least one User Account designated as an owner of an Organization. If you are the owner of an Organization under these Terms, we consider you responsible for the actions that are performed on or through that Organization.\r\n" + 
+				"\r\n" + 
+				"2. Required Information\r\n" + 
+				"You must provide a valid email address in order to complete the signup process. Any other information requested, such as your real name, is optional, unless you are accepting these terms on behalf of a legal entity (in which case we need more information about the legal entity) or if you opt for a paid Account, in which case additional information will be necessary for billing purposes.\r\n" + 
+				"\r\n3. Account Requirements\r\n" + 
+				"We have a few simple rules for User Accounts on GitHub's Service.\r\n" + 
+				"\r\n" + 
+				"You must be a human to create an Account. Accounts registered by \"bots\" or other automated methods are not permitted. We do permit machine accounts:\r\n" + 
+				"A machine account is an Account set up by an individual human who accepts the Terms on behalf of the Account, provides a valid email address, and is responsible for its actions. A machine account is used exclusively for performing automated tasks. Multiple users may direct the actions of a machine account, but the owner of the Account is ultimately responsible for the machine's actions. You may maintain no more than one free machine account in addition to your free User Account.\r\n" + 
+				"One person or legal entity may maintain no more than one free Account (if you choose to control a machine account as well, that's fine, but it can only be used for running a machine).";
 		int vbox = GTK.gtk_box_new(GTK.GTK_ORIENTATION_VERTICAL, 0);
 		GTK.gtk_container_add(win, vbox);
 		GTK.gtk_widget_show(vbox);
@@ -51,7 +60,7 @@ public class Agreement {
 		GTK.gtk_text_buffer_set_text(buff, msg);
 		GTK.gtk_widget_show(txtMsg);
 		
-		int cbAgree = GTK.gtk_check_button_new_with_label("我已阅读并同意以上协议");
+		int cbAgree = GTK.gtk_check_button_new_with_label("Agree terms");
 		GTK.gtk_box_pack_start(vbox, cbAgree, false, false, 0);
 		GTK.gtk_widget_show(cbAgree);
 		
@@ -68,7 +77,7 @@ public class Agreement {
 		GTK.gtk_box_pack_end(vbox, boxBtns, false, true, 0);
 		GTK.gtk_widget_show(boxBtns);
 		
-		btnInstall = GTK.gtk_button_new_with_label("安装");
+		btnInstall = GTK.gtk_button_new_with_label("Install");
 		GTK.gtk_box_pack_start(boxBtns, btnInstall, false,false, 0);
 		GTK.gtk_widget_set_sensitive(btnInstall, false);
 		GTK.gtk_widget_show(btnInstall);
@@ -85,7 +94,7 @@ public class Agreement {
 		
 		
 
-		int btnCancel = GTK.gtk_button_new_with_label("取消");
+		int btnCancel = GTK.gtk_button_new_with_label("Cancel");
 		GTK.gtk_box_pack_start(boxBtns, btnCancel, false,false, 0);
 		GTK.gtk_widget_show(btnCancel);
 		GTK.g_signal_connect(btnCancel, "clicked", new IGCallBack() {
