@@ -14,7 +14,7 @@ public class MyNotepad
 		GTK.gtk_init();
 		
 		mainWindow = GTK.gtk_window_new(GTK.GTK_WINDOW_TOPLEVEL);
-		GTK.gtk_window_set_title(mainWindow, "记事本");
+		GTK.gtk_window_set_title(mainWindow, "Notepad");
 		//GTK.gtk_window_set_default_size(mainWindow, 500, 500);
 		GTK.gtk_window_maximize(mainWindow);
 		
@@ -40,16 +40,16 @@ public class MyNotepad
 		
 		//文件菜单
 		int filemenu = GTK.gtk_menu_new();
-		int filemi = GTK.gtk_menu_item_new_with_label("文件");
+		int filemi = GTK.gtk_menu_item_new_with_label("File");
 		GTK.gtk_widget_show(filemi);
 		GTK.gtk_menu_item_set_submenu(filemi, filemenu);
 		GTK.gtk_menu_shell_append(mainMenuBar, filemi);
 		
-		int newMI = GTK.gtk_menu_item_new_with_label("新建");
+		int newMI = GTK.gtk_menu_item_new_with_label("New");
 		GTK.gtk_widget_show(newMI);
 		GTK.gtk_menu_shell_append(filemenu, newMI);
 		
-		int openMI = GTK.gtk_menu_item_new_with_label("打开");
+		int openMI = GTK.gtk_menu_item_new_with_label("Open");
 		GTK.gtk_widget_show(openMI);
 		GTK.gtk_menu_shell_append(filemenu, openMI);
 		GTK.g_signal_connect(openMI, "activate", new IGCallBack() {
@@ -61,15 +61,15 @@ public class MyNotepad
 			}
 		}, null);
 		
-		int savemi = GTK.gtk_menu_item_new_with_label("保存");
+		int savemi = GTK.gtk_menu_item_new_with_label("Save");
 		GTK.gtk_widget_show(savemi);
 		GTK.gtk_menu_shell_append(filemenu, savemi);
 		
-		int saveasmi = GTK.gtk_menu_item_new_with_label("另存为");
+		int saveasmi = GTK.gtk_menu_item_new_with_label("Save as");
 		GTK.gtk_widget_show(saveasmi);
 		GTK.gtk_menu_shell_append(filemenu, saveasmi);
 		
-		int quitmi = GTK.gtk_menu_item_new_with_label("退出");
+		int quitmi = GTK.gtk_menu_item_new_with_label("quit");
 		GTK.gtk_widget_show(quitmi);
 		GTK.gtk_menu_shell_append(filemenu, quitmi);
 		GTK.g_signal_connect(quitmi, "activate", new IGCallBack() {			
@@ -81,16 +81,16 @@ public class MyNotepad
 		}, null);
 		
 		int editmenu = GTK.gtk_menu_new();
-		int editmi = GTK.gtk_menu_item_new_with_label("编辑");
+		int editmi = GTK.gtk_menu_item_new_with_label("Edit");
 		GTK.gtk_widget_show(editmi);
 		GTK.gtk_menu_item_set_submenu(editmi,editmenu);
 		GTK.gtk_menu_shell_append(mainMenuBar, editmi);
 		
-		int copymi = GTK.gtk_menu_item_new_with_label("复制");
+		int copymi = GTK.gtk_menu_item_new_with_label("Copy");
 		GTK.gtk_widget_show(copymi);
 		GTK.gtk_menu_shell_append(editmenu, copymi);
 		
-		int pastemi = GTK.gtk_menu_item_new_with_label("粘贴");
+		int pastemi = GTK.gtk_menu_item_new_with_label("Paste");
 		GTK.gtk_widget_show(pastemi);
 		GTK.gtk_menu_shell_append(editmenu, pastemi);
 		
@@ -110,16 +110,16 @@ public class MyNotepad
 	
 	static void doOpen()
 	{
-		int fc = GTK.gtk_file_chooser_dialog_new("打开文件", mainWindow, GTK.GTK_FILE_CHOOSER_ACTION_OPEN, "打开");
+		int fc = GTK.gtk_file_chooser_dialog_new("Open File", mainWindow, GTK.GTK_FILE_CHOOSER_ACTION_OPEN, "打开");
 		
 		int filterTxt = GTK.gtk_file_filter_new();
-		GTK.gtk_file_filter_set_name(filterTxt, "文本文件");
+		GTK.gtk_file_filter_set_name(filterTxt, "Text File");
 		GTK.gtk_file_filter_add_pattern(filterTxt, "*.txt");
 		GTK.gtk_file_filter_add_pattern(filterTxt, "*.htm");
 		GTK.gtk_file_chooser_add_filter(fc, filterTxt);
 		
 		int filterAll = GTK.gtk_file_filter_new();
-		GTK.gtk_file_filter_set_name(filterAll, "所有文件");
+		GTK.gtk_file_filter_set_name(filterAll, "All files");
 		GTK.gtk_file_filter_add_pattern(filterAll, "*.*");
 		GTK.gtk_file_chooser_add_filter(fc, filterAll);
 		
