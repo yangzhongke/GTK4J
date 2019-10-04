@@ -156,4 +156,4 @@ public class MyNotepad
 
 ![image](https://raw.githubusercontent.com/yangzhongke/GTK4J/master/docs/demo2.png) 
 
-![image](https://raw.githubusercontent.com/yangzhongke/GTK4J/master/docs/demo2.png) 
+![image](https://raw.githubusercontent.com/yangzhongke/GTK4J/master/docs/demo3.png) 
