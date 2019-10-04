@@ -1,11 +1,11 @@
 # GTK4J
-Java binding for GTK
+Java binding for [GTK](https://www.gtk.org)
 
 GTK4J is the core binding library.
 
 GTK4JTest is the demo cases.
 
-Ogtk is the Object-Oriented wrapper for [GTK4J](https://www.gtk.org)
+Ogtk is the Object-Oriented wrapper for GTK4J.
 
 ![image](https://raw.githubusercontent.com/yangzhongke/GTK4J/master/docs/demo1.png) 
 
