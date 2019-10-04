@@ -33,12 +33,12 @@ public class MyNotepad
 		GTK.gtk_widget_show(mainVBox);
 		GTK.gtk_container_add(mainWindow, mainVBox);
 		
-		//主菜单
+		//Main Menubar
 		int mainMenuBar = GTK.gtk_menu_bar_new();
-		GTK.gtk_box_pack_start(mainVBox, mainMenuBar, false, true, 0);//false：不拉伸，true ：填满
+		GTK.gtk_box_pack_start(mainVBox, mainMenuBar, false, true, 0);
 		GTK.gtk_widget_show(mainMenuBar);
 		
-		//文件菜单
+		//File Menu
 		int filemenu = GTK.gtk_menu_new();
 		int filemi = GTK.gtk_menu_item_new_with_label("File");
 		GTK.gtk_widget_show(filemi);
@@ -94,7 +94,7 @@ public class MyNotepad
 		GTK.gtk_widget_show(pastemi);
 		GTK.gtk_menu_shell_append(editmenu, pastemi);
 		
-		//编辑器的滚动条
+		//scrollbar of textview
 		int editorScroll = GTK.gtk_scrolled_window_new();
 		GTK.gtk_box_pack_end(mainVBox, editorScroll, true, true, 0);
 		GTK.gtk_widget_show(editorScroll);
